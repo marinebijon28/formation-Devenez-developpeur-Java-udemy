@@ -5,6 +5,54 @@ third	JVM is Java Virtual Machine
 
 The JVM create with the source code a .class which contain bytecode.
 
+# class System
+- not needs to instantiate this class.
+example use System:
+System.outputs/inn.function(param)
+	outputs :
+		- out : this standard output : 1
+		- err : this error output : 2
+	entry:
+		- in : standard entry : 0
+
+The function exit take an integer which return value's program :
+- if program return value 0 went well
+- if program return value 1 this program stop in error
+example :
+	system.exit(integer)
+
+The function getProperties() containt the propertys of your PC
+
+The function getenv() containt the propertys environment of your PC
+The function getenv(nameVariableEnvironment) containt this variable environment of your PC
+
+# container and wrapper
+container designates primitf type. Wrapper designates primitif type form Object.
+- For transform a variable in Wrapper. You should instantiate in Wrapper.
+Example : 
+	Float f = new Float(12.6f)
+	Float f1 = new Float("12.6")
+
+- For transform a variable in Container. You should use method for transorm in Container
+example : 
+	float f2 = f.floatValue();
+
+- for transform a type in other type. You should use static method : parseType().
+float f3 = Float.parseFloat("14.5");
+
+
+# class Scanner
+import java.util.scanner;
+
+You should import this class and instantiate this class wtih param input stream.
+example :
+	Scanner scan = new Scanner(Sytem.in)
+For use scanner you should know the type of value enter your terminal
+example :
+	String nextLine = cs.nextLine();
+	int nextInt = cs.nextInt();
+
+
 # interface
 - the term interface is wrongly called multiple inheritance.
 The interface represents a given capability to a class. That's why
@@ -163,7 +211,16 @@ The primitives types start with lower case
 not primitives types:
 The not primitives types start with upper case
 	- Integer
+	- Short
+	- Long
+	- Byte
 
+	- Float
+	- Double
+
+	- Boolean
+
+	- Character
 	- String
 
 The variables not start with number or upper character and the convention the 

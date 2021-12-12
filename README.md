@@ -5,6 +5,26 @@ third	JVM is Java Virtual Machine
 
 The JVM create with the source code a .class which contain bytecode.
 
+# interface
+- the term interface is wrongly called multiple inheritance.
+The interface represents a given capability to a class. That's why
+that interfaces end with able.
+- A class can be implemented from several interfaces.
+- one interface can inherit from several other interfaces
+- It is allowed to define interfaces that do not benefit from any
+method. It's interface are created to denote a capacity. In
+some cases the simple fact of knowing that a class benefits from this
+capacity is sufficient. This is called the flag interface.
+example:
+	Serializable
+
+- An interface can have properties but these must have a
+ value from the declaration and this value can never be modified
+
+# covariance (since java 5)
+-  It is a rewrite of a method of the parent class by changing
+ the type of method
+
 # keyword static variable
 - A static property is a property defined by the class, it is also called
 a variable of class. A class variable is a value common to all instances.
@@ -25,6 +45,13 @@ example:
 
 - You're should have display the static function with the name's class dot
 the name's property.
+
+# cast
+if you cast a variable an other type :
+	- You should possibility de save the new type in an other variable of type's cast
+	- Else you should use transtype is not affect a new variable
+	example :
+		(newType)nameVariable)
 
 # keyword static methode
 - A method with the static keyword which does not involve any instance attribute,

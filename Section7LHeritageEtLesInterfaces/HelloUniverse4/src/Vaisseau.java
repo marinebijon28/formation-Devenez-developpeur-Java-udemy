@@ -35,39 +35,32 @@ public abstract class Vaisseau {
     int tonnagePersonne(int tonnage) {
         int difference;
         int rejeter = 0;
-        if (nbPassagers < 15 && (type != "VAISSEAU-MONDE" && type != "CARGO")) {
-            if (tonnageActuel < nbPassagers * 2) {
-                // si tonnage + tonnageactuel < nb passager * 2
-                difference = tonnage - (nbPassagers * 2 - tonnageActuel);
-                if ((tonnage + tonnageActuel) < nbPassagers * 2) {
-                    rejeter = 0;
-                }
-                else {
-                    // je rejete le surplus
-                    rejeter = difference;
-                }
-                tonnageActuel += tonnage - rejeter;
+
+        if (type != "VAISSEAU-MONDE" && type != "CARGO")
+        {
+            if (nbPassagers < 12)
+                return tonnage + tonnageActuel;
+            if ((tonnage + tonnageActuel) < (nbPassagers * 2) && (tonnage + tonnageActuel) < tonnageMax) {
+                rejeter = 0;
             }
-            // si le tonnage actuel > nbPassager * 2
+            else if ((tonnage + tonnageActuel) > tonnageMax){
+                rejeter = (tonnage + tonnageActuel) - tonnageMax;
+            }
             else {
-                tonnageActuel = (tonnageActuel - (nbPassagers * 2));
-                rejeter = (tonnageActuel - (nbPassagers * 2)) + tonnage;
+                rejeter = (tonnage + tonnageActuel) - (nbPassagers * 2);
             }
+            tonnageActuel += tonnage - rejeter;
         }
         else {
             difference = (tonnage + tonnageActuel);
-            // tonneage - tonnageActuel < tonnageMax
             if (difference < tonnageMax){
                 rejeter = 0;
             }
-            // tonnage - tonnnageActuel > tonnageMax
             else {
                 rejeter = (difference) - tonnageMax;
-
             }
             tonnageActuel = (tonnage - tonnageActuel) - rejeter;
         }
-
         return rejeter;
     }
 

@@ -36,6 +36,11 @@ public class HelloUniverse {
         int quantity = 0;
         String restart = null;
         String type = null;
+        Vaisseau cargo = new VaisseauCivil(TypeVaisseau.CARGO);
+        Vaisseau chasseur1 = new VaisseauDeGuerre(TypeVaisseau.CHASSEUR);
+        Vaisseau chasseur2 = new VaisseauDeGuerre(TypeVaisseau.CHASSEUR);
+        tellurique = new PlaneteTellurique("Terre", 3);
+        tellurique.accueillirVaisseaux(cargo, chasseur1,  chasseur2);
 
         do {
             System.out.println("Pour utiliser un vaisseau rentrez son type :");
@@ -63,8 +68,8 @@ public class HelloUniverse {
             if (planet.equalsIgnoreCase( "Mercure") || planet.equalsIgnoreCase("Venus") ||
                     planet.equalsIgnoreCase("Terre") || planet.equalsIgnoreCase("Mars"))
             {
-                if (tellurique.restePlaceDisponible()) {
-                    tellurique.accueillirVaisseau(civile);
+                if (tellurique.restePlaceDisponible(civile)) {
+                    tellurique.accueillirVaisseaux(civile);
                     System.out.println("Quelle quantité voulez-vous embarquer sur votre vaisseau :");
                     quantity = scan.nextInt();
                     System.out.println(civile.emporterCargaison(quantity));

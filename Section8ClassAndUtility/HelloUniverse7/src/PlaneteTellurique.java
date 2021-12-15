@@ -1,13 +1,13 @@
 public class PlaneteTellurique extends Planete implements Habitable{
     int totalVisiteurs;
-    Vaisseau[] vaisseauxAccostes;
+    Vaisseau[][] vaisseauxAccostes;
 
    /* public PlaneteTellurique(String nom) {
         super(nom);
     }*/
     public PlaneteTellurique(String nom, int baie) {
         super(nom);
-        this.vaisseauxAccostes = new Vaisseau[baie];
+        this.vaisseauxAccostes = new Vaisseau[2][baie];
     }
 
     // surcharge
@@ -32,9 +32,13 @@ public class PlaneteTellurique extends Planete implements Habitable{
         System.out.println("Le nombre d'humains ayant déjà séjourner sur " + nom + " est actuellement de " + totalVisiteurs);
     }
 
-    Boolean restePlaceDisponible(){
-        for (int i = 0; i < this.vaisseauxAccostes.length; i++){
-            if (this.vaisseauxAccostes[i] == null){
+    Boolean restePlaceDisponible(Vaisseau vaisseau){
+        int index = 0;
+        if (vaisseau instanceof VaisseauDeGuerre) {
+            index = 1;
+        }
+        for (int i = 0; i < this.vaisseauxAccostes[index].length; i++){
+            if (this.vaisseauxAccostes[index][i] == null){
                 return true;
             }
         }// pt a enlever
@@ -43,14 +47,33 @@ public class PlaneteTellurique extends Planete implements Habitable{
     }
 
     @Override
-    public Vaisseau accueillirVaisseau(Vaisseau vaisseau) {
-        for (int i = 0; i < this.vaisseauxAccostes.length; i++){
-            if (this.vaisseauxAccostes[i] == null){
-                this.vaisseauxAccostes[i] = vaisseau;
-                return this.vaisseauxAccostes[i];
+    public Vaisseau accueillirVaisseaux(Vaisseau... vaisseau) {
+        int index = 0;
+        for (int i = 0; i < vaisseau.length; i++) {
+            index = 0;
+            if (vaisseau[i] instanceof VaisseauDeGuerre) {
+                index = 1;
+            }
+         //   System.out.println(vaisseau[i].type.nom);
+            for (int j = 0; j < this.vaisseauxAccostes[index].length; j++) {
+                if (this.vaisseauxAccostes[index][j] == null) {
+                    this.vaisseauxAccostes[index][j] = vaisseau[i];
+                    break;
+                }
             }
         }
-        return this.vaisseauxAccostes[this.vaisseauxAccostes.length - 1];
+        return this.vaisseauxAccostes[index][this.vaisseauxAccostes[index].length - 1];
+
+        /*int j = 0;
+        for (int i = 0; i < this.vaisseauxAccostes.length; i++) {
+            if (this.vaisseauxAccostes[i] == null) {
+                if (j < (vaisseau.length)) {
+                    this.vaisseauxAccostes[i] = vaisseau[j];
+                    j++;
+                }
+            }
+        }
+        return this.vaisseauxAccostes[this.vaisseauxAccostes.length - 1];*/
         /*if (vaisseau instanceof VaisseauDeGuerre && ((VaisseauDeGuerre)vaisseau).armesDesactivees == false)
             ((VaisseauDeGuerre) vaisseau).desactiverArmes();
         if (this.vaisseauAccoste == null) {

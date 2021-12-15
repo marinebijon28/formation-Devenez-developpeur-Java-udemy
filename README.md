@@ -26,6 +26,35 @@ The function getProperties() containt the propertys of your PC
 The function getenv() containt the propertys environment of your PC
 The function getenv(nameVariableEnvironment) containt this variable environment of your PC
 
+# List
+For instantiate this collection, you should import this collection.
+example :
+	List list = new ArrayList();
+If you should instantiate a list with to some type.
+example :
+	List<Voiture> list = new ArrayList();
+	this <> is diamond operator which contains the type of the list.
+
+For add an element in the list you should use arrayList.
+When you pass a primitive type to an arraylist it is transformed into a container type.
+example : 
+	list.add(3);
+
+When use the function get, you should use a index for going in to this position.
+If you would like this value and affect in a variable. You should use type Object because,
+you not know the type of this variable.
+example :
+	Object o = list.get(0)
+
+# ellipses / varargs
+this together of param same type :
+example :
+test("test", "test", "test");
+	test(String... args)
+we do not know the number of parameters received. This a tab of argument same type
+You're should one ellipses in this method
+
+
 # container and wrapper
 container designates primitf type. Wrapper designates primitif type form Object.
 - For transform a variable in Wrapper. You should instantiate in Wrapper.
@@ -39,6 +68,8 @@ example :
 
 - for transform a type in other type. You should use static method : parseType().
 float f3 = Float.parseFloat("14.5");
+
+- for transform a value of other type, you will should to use String.valueOf(par)
 
 
 # class Scanner

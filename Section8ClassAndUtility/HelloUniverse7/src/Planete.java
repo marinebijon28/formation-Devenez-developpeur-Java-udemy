@@ -1,4 +1,4 @@
-public class Planete {
+public class Planete implements Comparable{
     // property / attribute / instantiate variable
     static String forme = "Sphérique";
     static int nbPlanetesDecouvertes = 0;
@@ -7,6 +7,7 @@ public class Planete {
     long diametre;
     int totalVisiteurs;
     Atmosphere atmosphere;
+    float distanceEtoile;
 
 
     public Planete(String nom)
@@ -45,4 +46,13 @@ public class Planete {
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        Planete planet = (Planete)o;
+        if (planet.distanceEtoile < distanceEtoile)
+            return 1;
+        else if (planet.distanceEtoile > distanceEtoile)
+            return -1;
+        return 0;
+    }
 }

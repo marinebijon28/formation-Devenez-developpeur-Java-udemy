@@ -1,3 +1,5 @@
+package com.espacex.decouverte.enginsspatiaux;
+
 public class VaisseauCivil extends Vaisseau {
 
     public VaisseauCivil() {
@@ -6,7 +8,7 @@ public class VaisseauCivil extends Vaisseau {
     public VaisseauCivil(TypeVaisseau type) {
         super(type);
         switch (type.nom) {
-            case "Vaisseau-monde" :
+            case "com.espacex.decouverte.enginsspatiaux.Vaisseau-monde" :
                 tonnageMax = 2000;
                 break;
             case "Cargo" :
@@ -23,7 +25,7 @@ public class VaisseauCivil extends Vaisseau {
     int emporterCargaison(int tonnage) {
         int rejeter = 0;
         switch (type.nom) {
-            case "Vaisseau-monde" :
+            case "com.espacex.decouverte.enginsspatiaux.Vaisseau-monde" :
                 rejeter = tonnagePersonne(tonnage);
                 break;
             case "Cargo" :

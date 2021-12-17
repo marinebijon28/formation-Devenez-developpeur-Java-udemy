@@ -1,8 +1,10 @@
+package com.espacex.decouverte.objetsastro;
+
 public class PlaneteTellurique extends Planete implements Habitable{
     int totalVisiteurs;
     Vaisseau[][] vaisseauxAccostes;
 
-   /* public PlaneteTellurique(String nom) {
+   /* public com.espacex.decouverte.objetsastro.PlaneteTellurique(String nom) {
         super(nom);
     }*/
     public PlaneteTellurique(String nom, int baie) {
@@ -74,15 +76,15 @@ public class PlaneteTellurique extends Planete implements Habitable{
             }
         }
         return this.vaisseauxAccostes[this.vaisseauxAccostes.length - 1];*/
-        /*if (vaisseau instanceof VaisseauDeGuerre && ((VaisseauDeGuerre)vaisseau).armesDesactivees == false)
-            ((VaisseauDeGuerre) vaisseau).desactiverArmes();
+        /*if (vaisseau instanceof com.espacex.decouverte.enginsspatiaux.VaisseauDeGuerre && ((com.espacex.decouverte.enginsspatiaux.VaisseauDeGuerre)vaisseau).armesDesactivees == false)
+            ((com.espacex.decouverte.enginsspatiaux.VaisseauDeGuerre) vaisseau).desactiverArmes();
         if (this.vaisseauAccoste == null) {
             System.out.println("Aucun vaisseau ne s'en va");
         } else {
             System.out.println("Un vaisseau de type " +  this.vaisseauAccoste.type + " doit s'en aller");
         }
 
-        Vaisseau vaisseauPrecedent = this.vaisseauAccoste;
+        com.espacex.decouverte.enginsspatiaux.Vaisseau vaisseauPrecedent = this.vaisseauAccoste;
         this.vaisseauAccoste = vaisseau;
 
         totalVisiteurs+=vaisseau.nbPassagers;

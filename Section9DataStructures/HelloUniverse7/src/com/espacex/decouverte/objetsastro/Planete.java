@@ -1,3 +1,5 @@
+package com.espacex.decouverte.objetsastro;
+
 public class Planete implements Comparable{
     // property / attribute / instantiate variable
     static String forme = "Sphérique";

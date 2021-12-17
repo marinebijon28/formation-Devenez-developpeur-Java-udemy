@@ -5,6 +5,18 @@ third	JVM is Java Virtual Machine
 
 The JVM create with the source code a .class which contain bytecode.
 
+# visibility or access modifier
+Visibility or access modifier :
+- public : make the following accessible from anywhere
+- private : make the not following accessible from anywhere except in this class
+- protected : make visible in the class where it is declared, in the same package,
+or any inheriting class
+- package : is the default value for each methods, property,etc.. Package 
+not should write.
+there make the following accessible to any class of the moment
+that it is in the package
+
+
 # class System
 - not needs to instantiate this class.
 example use System:

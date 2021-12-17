@@ -1,5 +1,3 @@
-package com.espacex.decouverte.enginsspatiaux;
-
 public class VaisseauDeGuerre extends Vaisseau{
     String arme;
     int duree;

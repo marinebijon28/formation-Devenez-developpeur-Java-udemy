@@ -1,5 +1,3 @@
-package com.espacex.decouverte.enginsspatiaux;
-
 public abstract class Vaisseau {
     TypeVaisseau type;
     int nbPassagers;
@@ -39,7 +37,7 @@ public abstract class Vaisseau {
         int difference;
         int rejeter = 0;
 
-        if (type.nom != "com.espacex.decouverte.enginsspatiaux.Vaisseau-Monde" && type.nom != "Cargo")
+        if (type.nom != "Vaisseau-Monde" && type.nom != "Cargo")
         {
             if (nbPassagers < 12)
                 return tonnage + tonnageActuel;

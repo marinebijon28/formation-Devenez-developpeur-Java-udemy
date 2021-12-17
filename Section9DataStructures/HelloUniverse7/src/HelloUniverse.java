@@ -1,11 +1,3 @@
-package com.espacex.decouverte;
-
-import com.espacex.decouverte.objetsastro.Planete;
-import com.espacex.decouverte.objetsastro.PlaneteTellurique;
-
-import java.util.Collections;
-import java.util.Map;
-
 public class HelloUniverse {
     public static void main(String... args) {
 
@@ -17,7 +9,7 @@ public class HelloUniverse {
         mars.diametre = 6792;
         mars.distanceEtoile = 227.9F;
 
-       /* com.espacex.decouverte.objetsastro.Atmosphere at = new com.espacex.decouverte.objetsastro.Atmosphere();
+       /* Atmosphere at = new Atmosphere();
         at.constituants.put("CO2", Float.parseFloat("95"));
         at.constituants.put("N2", Float.parseFloat("3"));
         at.constituants.put("AR", Float.parseFloat("1.5"));
@@ -58,7 +50,7 @@ public class HelloUniverse {
         galaxy.planetes.add(terre);
         galaxy.planetes.add(neptune);
 
-       // com.espacex.decouverte.objetsastro.Planete[] planetsorted = (com.espacex.decouverte.objetsastro.Planete[]) galaxy.planetes.toArray();
+       // Planete[] planetsorted = (Planete[]) galaxy.planetes.toArray();
      //   Collections.sort(galaxy.planetes);
 
         for (Planete planete : galaxy.planetes) {
@@ -74,7 +66,7 @@ public class HelloUniverse {
             System.out.println(symbol + "% de " + floatsymbol);
         }*/
 
-        /*com.espacex.decouverte.objetsastro.Galaxie galaxy = new com.espacex.decouverte.objetsastro.Galaxie();
+        /*Galaxie galaxy = new Galaxie();
         galaxy.planetes.add(mercure);
         galaxy.planetes.add(venus);
         galaxy.planetes.add(terre);
@@ -85,27 +77,27 @@ public class HelloUniverse {
         galaxy.planetes.add(neptune);
 
 
-        com.espacex.decouverte.enginsspatiaux.Vaisseau civile = null;
-        com.espacex.decouverte.enginsspatiaux.TypeVaisseau vaisseau = null;
+        Vaisseau civile = null;
+        TypeVaisseau vaisseau = null;
         Scanner scan = new Scanner(System.in);
         boolean bool = true;
         String planet = null;
-        com.espacex.decouverte.objetsastro.PlaneteTellurique tellurique = null;
+        PlaneteTellurique tellurique = null;
         int quantity = 0;
         String restart = null;
         String type = null;
-        Iterator<com.espacex.decouverte.objetsastro.Planete> it = galaxy.planetes.iterator();
-        com.espacex.decouverte.objetsastro.Planete planete = null;
+        Iterator<Planete> it = galaxy.planetes.iterator();
+        Planete planete = null;
 
         do {
             System.out.println("Pour utiliser un vaisseau rentrez son type :");
             type = scan.nextLine();
-            vaisseau =  com.espacex.decouverte.enginsspatiaux.TypeVaisseau.valueOf(type);
-            if (vaisseau.nom.equalsIgnoreCase("com.espacex.decouverte.enginsspatiaux.Vaisseau-Monde") ||
+            vaisseau =  TypeVaisseau.valueOf(type);
+            if (vaisseau.nom.equalsIgnoreCase("Vaisseau-Monde") ||
                     vaisseau.nom.equalsIgnoreCase("Cargo"))
-                civile = new com.espacex.decouverte.enginsspatiaux.VaisseauCivil(vaisseau);
+                civile = new VaisseauCivil(vaisseau);
             else
-                civile = new com.espacex.decouverte.enginsspatiaux.VaisseauDeGuerre(vaisseau);
+                civile = new VaisseauDeGuerre(vaisseau);
             civile.nbPassagers = 1;
 
             System.out.println("Pour accoster une planète rentrez son index (Mercure, " +
@@ -121,7 +113,7 @@ public class HelloUniverse {
                         System.out.println(planete.nom);
                         if (tellurique == null) {
                             if (planet.equalsIgnoreCase(planete.nom)) {
-                                tellurique = (com.espacex.decouverte.objetsastro.PlaneteTellurique)planete;
+                                tellurique = (PlaneteTellurique)planete;
                                 break;
                             }
                         }
@@ -129,7 +121,7 @@ public class HelloUniverse {
                             System.out.println(tellurique.nom);
                             if ((planet.equalsIgnoreCase(tellurique.nom) == false) &&
                                     planet.equalsIgnoreCase(planete.nom)) {
-                                tellurique = (com.espacex.decouverte.objetsastro.PlaneteTellurique) planete;
+                                tellurique = (PlaneteTellurique) planete;
                                 break;
                             }
                         }

@@ -1,5 +1,3 @@
-package com.espacex.decouverte.objetsastro;
-
 import java.util.HashMap;
 import java.util.Map;
 

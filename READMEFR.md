@@ -11,7 +11,7 @@ le ; marque la fin d'une indentation
 un saut de ligne après chaque instructions
 
 # Java comment ça marche
-- la première étape de compilation java devient du byte code
+- la première étape de compilation java devient du byte code nom.class sont les fichier byte code
 - la deuxième étape qui est l'interprétation interprétation 
 
 contrairement au langage C qui compile ou au JavaScript qui est un langage interpréter 
@@ -27,10 +27,15 @@ l'interprétation ce fait grâce par l'interpréteur java.exe | .sh
 - la performance
 - la fiabilité
 
+# Racourcie
+sout = Sout.out.println() affiche ce qu'il entre les parenthéses avec un saut de ligne
+
 # IDE Java
 - Eclipse gratuit
 - NetBeans (2 form opensource par apache ou propriétaire par oracle)
 - IntelliJ (community gratuit)
+
+Grâce à l'ide on peut voir des erreurs : des erreurs syntaxiques ou des problèmes de compilation
 
 ## Section 2 : Travailler avec Java pour de vrai
 jdk = java development kit

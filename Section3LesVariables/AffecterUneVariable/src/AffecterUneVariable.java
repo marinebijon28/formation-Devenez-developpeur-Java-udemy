@@ -1,4 +1,8 @@
 public class AffecterUneVariable {
+    /**
+     * main of project, it's run the project
+     * @param args arguments of program
+     */
     public static void main(String... args) {
         /*
          *

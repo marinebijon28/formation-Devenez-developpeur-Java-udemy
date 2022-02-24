@@ -19,6 +19,9 @@ contrairement au langage C qui compile ou au JavaScript qui est un langage inter
 la compilation ce fait grâce à un programme javac.exe | .sh
 l'interprétation ce fait grâce par l'interpréteur java.exe | .sh
 
+Le byte code est le même pour tous le monde.
+C'est l'interpréteur qui change en fonction de l'OS
+
 # Avantage :
 - Java est disponible partout pas besoin d'avoir votre oridnateur.
 
@@ -38,4 +41,18 @@ sout = Sout.out.println() affiche ce qu'il entre les parenthéses avec un saut d
 Grâce à l'ide on peut voir des erreurs : des erreurs syntaxiques ou des problèmes de compilation
 
 ## Section 2 : Travailler avec Java pour de vrai
-jdk = java development kit
+# Environnement Java
+JDK = java development kit
+JVM = Java virtual Machine == environnement java + autres == JRE = Java Runtime Environment
+
+# ordre environnement
+JDK
+JRE
+JVM
+
+
+
+
+
+
+

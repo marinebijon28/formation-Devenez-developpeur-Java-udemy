@@ -1,7 +1,11 @@
-public class HelloUniverse2 {
+public class HelloUniverse1 {
+    /**
+     * main of project, it's run the project
+     * @param args arguments of program
+     */
     public static void main (String... args)
     {
-        // delcration and affectation
+        // declaration and affectation
         int numberPlanity = 8;
         String firstSentence = "Aux dernières nouvelles, le nombre total de planètes dans le système solaire est de : ";
         String secondSentence = "Il y a quelques années cependant, elles étaient au nombre de : ";
